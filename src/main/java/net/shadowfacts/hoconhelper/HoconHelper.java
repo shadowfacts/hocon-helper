@@ -29,6 +29,11 @@ public class HoconHelper implements DeserializationContext {
 	public static class Builder {
 		private final Map<Class, Deserializer> deserializers = new HashMap<>();
 
+		public <T> Builder register(Class<T> clazz, Deserializer<T> deserializer) {
+			deserializers.put(clazz, deserializer);
+			return this;
+		}
+
 		public HoconHelper create() {
 			return new HoconHelper(Collections.unmodifiableMap(deserializers));
 		}
