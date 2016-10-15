@@ -1,0 +1,13 @@
+plugins {
+	id "java"
+	id "idea"
+	id "maven"
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: "com.typesafe", name: "config", version: config_version
+}
